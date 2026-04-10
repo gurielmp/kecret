@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "Kecret Studio",
+  name: "Zennelis",
   description:
     "A digital agency for brands that need social media management, company websites, and a sharper operating system for marketing execution.",
-  url: "https://kecret.studio",
-  contactEmail: "hello@kecret.studio",
+  url: "https://zennelis.com",
+  contactEmail: "hello@zennelis.com",
   stats: [
     {
       value: "360°",

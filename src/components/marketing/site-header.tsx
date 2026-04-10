@@ -19,11 +19,11 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-[color:rgba(248,244,238,0.82)] backdrop-blur-xl">
-      <Container className="py-3 sm:py-4">
+      <Container className="py-3.5 sm:py-4.5">
         <div className="flex items-center justify-between gap-6">
           <Link
             href="#home"
-            className="font-display text-lg font-semibold tracking-[-0.03em] text-[var(--color-foreground)]"
+            className="font-display text-xl font-semibold tracking-[-0.03em] text-[var(--color-foreground)] sm:text-[1.35rem]"
             onClick={() => setIsOpen(false)}
           >
             {siteConfig.name}
@@ -34,7 +34,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-[var(--color-muted)] transition-colors hover:bg-white hover:text-[var(--color-foreground)]"
+                className="rounded-full px-4 py-2.5 text-[15px] font-medium text-[var(--color-muted)] transition-colors hover:bg-white hover:text-[var(--color-foreground)]"
               >
                 {item.label}
               </Link>
@@ -46,7 +46,7 @@ export function SiteHeader() {
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
             aria-label="Toggle navigation menu"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--color-foreground)] backdrop-blur transition-colors hover:bg-white sm:hidden"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[var(--color-foreground)] backdrop-blur transition-colors hover:bg-white sm:hidden"
             onClick={() => setIsOpen((current) => !current)}
           >
             <span className="relative block h-4 w-5">

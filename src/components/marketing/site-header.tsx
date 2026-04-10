@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { siteConfig } from "@/data/site-config";
@@ -17,27 +16,40 @@ const navItems = [
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleNavigate = (targetId: string) => {
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    setIsOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-[color:rgba(248,244,238,0.82)] backdrop-blur-xl">
       <Container className="py-3.5 sm:py-4.5">
         <div className="flex items-center justify-between gap-6">
-          <Link
-            href="#home"
+          <button
+            type="button"
             className="font-display text-xl font-semibold tracking-[-0.03em] text-[var(--color-foreground)] sm:text-[1.35rem]"
-            onClick={() => setIsOpen(false)}
+            onClick={() => handleNavigate("home")}
           >
             {siteConfig.name}
-          </Link>
+          </button>
 
           <nav className="hidden flex-wrap items-center justify-end gap-2 sm:flex sm:gap-3">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
+                type="button"
                 className="rounded-full px-4 py-2.5 text-[15px] font-medium text-[var(--color-muted)] transition-colors hover:bg-white hover:text-[var(--color-foreground)]"
+                onClick={() => handleNavigate(item.href.replace("#", ""))}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -75,14 +87,14 @@ export function SiteHeader() {
             className="mt-3 grid gap-2 rounded-[1.5rem] border border-black/8 bg-white/85 p-3 shadow-[0_18px_50px_rgba(15,23,42,0.08)] backdrop-blur sm:hidden"
           >
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
-                className="rounded-2xl px-4 py-3 text-sm font-medium text-[var(--color-foreground)] transition-colors hover:bg-[var(--color-surface)]"
-                onClick={() => setIsOpen(false)}
+                type="button"
+                className="rounded-2xl px-4 py-3 text-left text-sm font-medium text-[var(--color-foreground)] transition-colors hover:bg-[var(--color-surface)]"
+                onClick={() => handleNavigate(item.href.replace("#", ""))}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </nav>
         ) : null}

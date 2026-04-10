@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Zennelis Creative",
-  legalName: "Zennelis",
+  legalName: "Zennelis Creative",
   description:
     "A digital agency for brands that need social media management, company websites, and a sharper operating system for marketing execution.",
   url: "https://zennelis.com",

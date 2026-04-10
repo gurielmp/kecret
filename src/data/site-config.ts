@@ -1,9 +1,22 @@
 export const siteConfig = {
   name: "Zennelis",
+  legalName: "Zennelis",
   description:
     "A digital agency for brands that need social media management, company websites, and a sharper operating system for marketing execution.",
   url: "https://zennelis.com",
   contactEmail: "hello@zennelis.com",
+  locale: "en_US",
+  keywords: [
+    "digital agency",
+    "social media agency",
+    "web design agency",
+    "company profile website",
+    "landing page agency",
+    "content management",
+    "brand strategy",
+    "website development",
+  ],
+  socialImage: "/og/zennelis-og.svg",
   stats: [
     {
       value: "360°",

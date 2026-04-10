@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 import { Container } from "@/components/layout/container";
@@ -34,10 +35,22 @@ export function SiteHeader() {
         <div className="flex items-center justify-between gap-6">
           <button
             type="button"
-            className="font-display text-xl font-semibold tracking-[-0.03em] text-[var(--color-foreground)] sm:text-[1.35rem]"
+            className="flex items-center gap-3 text-left"
             onClick={() => handleNavigate("home")}
           >
-            {siteConfig.name}
+            <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-black/8 bg-white/70 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur sm:h-12 sm:w-12">
+              <Image
+                src="/zennelis-mark.svg"
+                alt="Zennelis logo"
+                width={40}
+                height={40}
+                className="h-9 w-9 sm:h-10 sm:w-10"
+                priority
+              />
+            </span>
+            <span className="font-display text-xl font-semibold tracking-[-0.03em] text-[var(--color-foreground)] sm:text-[1.35rem]">
+              {siteConfig.name}
+            </span>
           </button>
 
           <nav className="hidden flex-wrap items-center justify-end gap-2 sm:flex sm:gap-3">

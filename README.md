@@ -1,4 +1,4 @@
-## Kecret Studio
+## Zennelis
 
 Starter structure for an agency website built on Next.js 15. This project is set up for a company profile, service pages, packages, case studies, and an inquiry funnel.
 

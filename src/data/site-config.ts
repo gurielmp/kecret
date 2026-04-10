@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Zennelis",
+  name: "Zennelis Creative",
   legalName: "Zennelis",
   description:
     "A digital agency for brands that need social media management, company websites, and a sharper operating system for marketing execution.",
@@ -28,7 +28,8 @@ export const siteConfig = {
     },
     {
       value: "1 base",
-      label: "One foundation for content and web assets that can scale with the brand.",
+      label:
+        "One foundation for content and web assets that can scale with the brand.",
     },
   ],
   services: [
@@ -91,7 +92,8 @@ export const siteConfig = {
   packages: [
     {
       name: "Starter",
-      description: "For businesses that need a clean digital presence without overbuilding.",
+      description:
+        "For businesses that need a clean digital presence without overbuilding.",
       price: "From $400",
       billing: "per project or monthly, depending on scope",
       featured: false,
@@ -103,7 +105,8 @@ export const siteConfig = {
     },
     {
       name: "Growth",
-      description: "The core package for brands that need both website execution and content support.",
+      description:
+        "The core package for brands that need both website execution and content support.",
       price: "From $900",
       billing: "custom scope with funnel and content priorities",
       featured: true,
@@ -115,7 +118,8 @@ export const siteConfig = {
     },
     {
       name: "Retainer",
-      description: "For ongoing production, continuous updates, and a steadier delivery rhythm.",
+      description:
+        "For ongoing production, continuous updates, and a steadier delivery rhythm.",
       price: "Custom",
       billing: "monthly retainer based on deliverables",
       featured: false,

@@ -67,6 +67,47 @@ export const siteConfig = {
       ],
     },
   ],
+  selectedWork: [
+    {
+      name: "Aster Studio",
+      category: "Company Website",
+      summary:
+        "Reframed the studio's positioning with a cleaner service narrative and a more credible digital presence.",
+      highlights: [
+        "Messaging structure",
+        "Responsive company website",
+        "Inquiry-focused CTA flow",
+      ],
+      note: "Case study coming soon",
+      featured: true,
+    },
+    {
+      name: "Northpeak Advisory",
+      category: "Landing Page",
+      summary:
+        "Built a sharper conversion path for a consulting offer aimed at decision-makers and growth-stage teams.",
+      highlights: [
+        "Service positioning",
+        "Lead-generation landing page",
+        "Conversion-focused content hierarchy",
+      ],
+      note: "Case study coming soon",
+      featured: false,
+    },
+    {
+      name: "Sora Living",
+      category: "Social & Web Presence",
+      summary:
+        "Connected content direction and website structure to make the brand feel more cohesive and premium.",
+      highlights: [
+        "Content direction",
+        "Brand presentation system",
+        "Social-to-website consistency",
+      ],
+      note: "Case study coming soon",
+      featured: false,
+    },
+  ],
   process: [
     {
       title: "Discover",

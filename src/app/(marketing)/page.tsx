@@ -4,6 +4,7 @@ import { ContactSection } from "@/components/marketing/contact-section";
 import { HeroSection } from "@/components/marketing/hero-section";
 import { PackagesSection } from "@/components/marketing/packages-section";
 import { ProcessSection } from "@/components/marketing/process-section";
+import { SelectedWorkSection } from "@/components/marketing/selected-work-section";
 import { ServicesSection } from "@/components/marketing/services-section";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { siteConfig } from "@/data/site-config";
@@ -44,6 +45,7 @@ export default function HomePage() {
       <SiteHeader />
       <HeroSection />
       <ServicesSection />
+      <SelectedWorkSection />
       <ProcessSection />
       <PackagesSection />
       <ContactSection />

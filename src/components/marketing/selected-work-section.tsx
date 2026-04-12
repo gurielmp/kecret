@@ -1,7 +1,31 @@
+"use client";
+
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
+
 import { Container } from "@/components/layout/container";
 import { siteConfig } from "@/data/site-config";
 
 import { SectionHeading } from "./section-heading";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 function WorkPreview({ name, featured }: { name: string; featured: boolean }) {
   const frameClassName = featured
@@ -173,14 +197,28 @@ export function SelectedWorkSection() {
       className="scroll-mt-28 border-y border-black/5 bg-[linear-gradient(180deg,rgba(255,248,241,0.7)_0%,rgba(239,230,218,0.45)_100%)] py-20 sm:py-24"
     >
       <Container>
-        <SectionHeading
-          eyebrow="Selected Work"
-          title="Concept projects shaped to show how Zennelis builds trust online."
-          description="A look at directional work across service businesses, consulting offers, and brand-led experiences. The goal is not decoration. It is positioning, clarity, and a stronger digital first impression."
-        />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <SectionHeading
+            eyebrow="Selected Work"
+            title="Concept projects shaped to show how Zennelis builds trust online."
+            description="A look at directional work across service businesses, consulting offers, and brand-led experiences. The goal is not decoration. It is positioning, clarity, and a stronger digital first impression."
+          />
+        </motion.div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mt-12 grid gap-6 lg:grid-cols-3"
+        >
           {siteConfig.selectedWork.map((project) => (
-            <article
+            <motion.article
+              variants={itemVariants}
               key={project.name}
               className={`group flex h-full min-h-[44rem] flex-col rounded-[2rem] border p-7 shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,0.1)] ${
                 project.featured
@@ -214,7 +252,7 @@ export function SelectedWorkSection() {
                 {project.highlights.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span
-                      className={`mt-1 h-2.5 w-2.5 rounded-full ${
+                      className={`mt-1 h-2.5 w-2.5 rounded-full flex-none ${
                         project.featured
                           ? "bg-[var(--color-accent)]"
                           : "bg-[var(--color-foreground)]"
@@ -233,9 +271,9 @@ export function SelectedWorkSection() {
               >
                 {project.note} →
               </p>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
